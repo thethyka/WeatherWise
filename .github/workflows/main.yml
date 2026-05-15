@@ -22,7 +22,8 @@ jobs:
       - run: npm ci
       - run: npm run generate
         env:
-          MAPBOX_API_KEY: ${{ secrets.MAPBOX_API_KEY }}
+          mb_key: ${{ secrets.MB_KEY }}
+          oai_key: ${{ secrets.OAI_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
