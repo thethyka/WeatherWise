@@ -20,6 +20,10 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - name: Validate Mapbox token
+        run: test -n "$mb_key"
+        env:
+          mb_key: ${{ secrets.MB_KEY }}
       - run: npm run generate
         env:
           mb_key: ${{ secrets.MB_KEY }}
