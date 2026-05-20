@@ -271,7 +271,7 @@ async function transcribe(file) {
   formData.append("language", "en");
   const res = await fetch("https://api.openai.com/v1/audio/transcriptions", {
     headers: {
-      Authorization: "Bearer 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",
+      Authorization: `Bearer ${useRuntimeConfig().public.oai_key}`,
     },
     method: "POST",
     body: formData
